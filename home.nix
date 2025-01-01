@@ -16,6 +16,7 @@
       credential.helper = "libsecret";
       init.defaultBranch = "main";
       commit.gpgsign = true;
+      user.signingkey = "FB96F290925EE656";
     };
   };
 
