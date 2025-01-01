@@ -15,6 +15,7 @@
     extraConfig = {
       credential.helper = "libsecret";
       init.defaultBranch = "main";
+      commit.gpgsign = true;
     };
   };
 
