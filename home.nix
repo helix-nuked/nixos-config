@@ -10,10 +10,12 @@
     enable = true;
     userName = "helix-nuked";
     userEmail = "helix.nuked@proton.me";
+    lfs.enable = true;
     extraConfig = {
       init.defaultBranch = "main";
     };
   };
+  programs.git-credential-oauth.enable
 
   programs.chromium = {
     enable = true;
