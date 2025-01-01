@@ -11,12 +11,13 @@
     userName = "helix-nuked";
     userEmail = "helix.nuked@proton.me";
     lfs.enable = true;
+    extraConfig.credential.helper = "manager";
+    extraConfig.credential."https://github.com".username = "helix-nuked";
+    extraConfig.credential.credentialStore = "cache";
     extraConfig = {
       init.defaultBranch = "main";
     };
   };
-
-  programs.git-credential-oauth.enable = true;
 
   programs.chromium = {
     enable = true;
