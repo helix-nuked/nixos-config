@@ -15,7 +15,8 @@
       init.defaultBranch = "main";
     };
   };
-  programs.git-credential-oauth.enable
+
+  programs.git-credential-oauth.enable = true;
 
   programs.chromium = {
     enable = true;
