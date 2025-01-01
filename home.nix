@@ -11,7 +11,7 @@
     userName = "helix-nuked";
     userEmail = "helix.nuked@proton.me";
     extraConfig = {
-      init,defaultBranch = "main";
+      init.,defaultBranch = "main";
     };
   };
 
