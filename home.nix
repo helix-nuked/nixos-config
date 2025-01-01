@@ -10,7 +10,6 @@
     enable = true;
     userName = "helix-nuked";
     userEmail = "helix.nuked@proton.me";
-    defaultBranch = "main";
   };
 
   programs.chromium = {
@@ -19,12 +18,13 @@
     extensions = [
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
     ];
-  }
+  };
 
   home.packages = with pkgs; [
     tree
     nnn
     neofetch
+    nix-output-monitor
   ];
 
   # This value determines the home Manager release that your
