@@ -34,6 +34,7 @@
     nnn
     neofetch
     nix-output-monitor
+    gh
   ];
 
   # This value determines the home Manager release that your
