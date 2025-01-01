@@ -13,7 +13,7 @@
     userEmail = "helix.nuked@proton.me";
     lfs.enable = true;
     extraConfig = {
-      credential.helper = "oauth";
+      credential.helper = "libsecret";
       init.defaultBranch = "main";
     };
   };
