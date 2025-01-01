@@ -8,13 +8,15 @@
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
+    package = pkgs.gitFull;
     userName = "helix-nuked";
     userEmail = "helix.nuked@proton.me";
     lfs.enable = true;
-    extraConfig.credential.helper = "manager";
-    extraConfig.credential."https://github.com".username = "helix-nuked";
-    extraConfig.credential.credentialStore = "cache";
     extraConfig = {
+      credential.helper = "${
+          pkgs.git.override { withLibsecret = true; }
+        }/bin/git-credential-libsecret";
+      };
       init.defaultBranch = "main";
     };
   };
