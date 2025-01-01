@@ -10,6 +10,9 @@
     enable = true;
     userName = "helix-nuked";
     userEmail = "helix.nuked@proton.me";
+    extraConfig = {
+      init,defaultBranch = "main";
+    };
   };
 
   programs.chromium = {
@@ -21,7 +24,7 @@
     ];
   };
 
-  prograns.firefox = {
+  programs.firefox = {
     enable = true;
     package = pkgs.firefox-wayland;
   };
