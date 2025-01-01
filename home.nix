@@ -13,10 +13,8 @@
     userEmail = "helix.nuked@proton.me";
     lfs.enable = true;
     extraConfig = {
-      credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
-        init.defaultBranch = "main";
+      credential.helper = "oauth";
+      init.defaultBranch = "main";
     };
   };
 

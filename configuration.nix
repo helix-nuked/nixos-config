@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
     ];
 
+  nixpkgs.config.allowUnfree = true;
+
   # Boot section
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
