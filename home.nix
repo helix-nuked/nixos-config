@@ -16,7 +16,8 @@
       credential.helper = "libsecret";
       init.defaultBranch = "main";
       commit.gpgsign = true;
-      user.signingkey = "FB96F290925EE656";
+      gpg.format = "ssh";
+      user.signingkey = "/home/helix/.ssh/id_ed25519.pub";
     };
   };
 
