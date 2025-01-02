@@ -42,9 +42,12 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, nixvim, ... }: {
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
     # Please replace my-nixos with your hostname
     nixosConfigurations.helinix = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
@@ -65,19 +68,10 @@
         }
       ];
     };
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      homeConfigurations = {
-        helix = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            nixvim.homeManagerModules.nixvim
-            ./home.nix
-          ];
-        };
+    homeConfigurations.helix = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extra-modules = {
+        nixvim.homeManagerModules.nixvim
       };
     };
   };
