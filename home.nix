@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   # TODO please change the username & home directory to your own
@@ -33,6 +33,11 @@
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-wayland;
+  };
+
+  programs.nixvim = {
+    enable = true;
+    defaultEditor = true;
   };
 
   home.packages = with pkgs; [
