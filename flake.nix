@@ -34,6 +34,11 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+        url = "github:nix-community/nixvim";
+        # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
@@ -58,6 +63,14 @@
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
         }
+      ];
+    };
+    # Home Manager configuration
+    homeConfigurations.helix = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs;
+      extra-modules = [
+        home-manager.nixosModules.home-manager
+        nixvim.homeManagerModules.nixvim  # Import the NixVim module for Home Manager
       ];
     };
   };
