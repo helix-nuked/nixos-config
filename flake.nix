@@ -45,7 +45,6 @@
     # Please replace my-nixos with your hostname
     nixosConfigurations.helinix = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
@@ -68,7 +67,7 @@
     };
     homeConfigurations.helix = home-manager.lib.homeManagerConfiguration {
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = nixpkgs.legacyPackages."x86_64-linux";
       extra-modules = [
         nixvim.homeManagerModules.nixvim
       ];
