@@ -68,7 +68,7 @@
     # Home Manager configuration
     homeConfigurations.helix = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs;
-      extra-modules = [
+      modules = [
         home-manager.nixosModules.home-manager
         nixvim.homeManagerModules.nixvim  # Import the NixVim module for Home Manager
       ];
