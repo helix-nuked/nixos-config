@@ -41,7 +41,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, nixvim, ... }: {
     # Please replace my-nixos with your hostname
     nixosConfigurations.helinix = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -64,6 +64,21 @@
             # arguments to home.nix
         }
       ];
+    };
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
+      homeConfigurations = {
+        helix = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            nixvim.homeManagerModules.nixvim
+            ./home.nix
+          ];
+        };
+      };
     };
   };
 }
