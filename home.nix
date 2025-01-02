@@ -35,15 +35,10 @@
     package = pkgs.firefox-wayland;
   };
 
-  programs.nixvim = {
+  programs.neovim = {
     enable = true;
     defaultEditor = true;
   };
-
-  # programs.neovim = {
-  #   enable = true;
-  #   defaultEditor = true;
-  # };
 
   home.packages = with pkgs; [
     tree
