@@ -57,6 +57,8 @@
     neofetch
     nix-output-monitor
     gh
+    nh
+    nvd
   ];
 
   wayland.windowManager.hyprland = {
