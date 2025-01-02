@@ -95,9 +95,6 @@
     xserver.videoDrivers = [ "intel" ]; # TODO Try modesetting vs intel on ivy bridge
     desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
-    # Auto-Login
-    displayManager.autoLogin.enable = true;
-    displayManager.autoLogin.user = "helix";
   };
   programs = {
     hyprland = {
@@ -105,7 +102,9 @@
       enable = true;
       # Whether to enable XWayland
       xwayland.enable = true;
+      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
+    btop.enable = true;
   };
 
   services.flatpak.enable = true; # add flatpak for sober cuz excited to test
