@@ -17,7 +17,7 @@
       init.defaultBranch = "main";
       commit.gpgsign = true;
       gpg.format = "ssh";
-      user.signingkey = /home/helix/.ssh/id_ed25519.pub;
+      user.signingkey = "/home/helix/.ssh/id_ed25519.pub";
     };
   };
 
