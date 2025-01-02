@@ -35,7 +35,7 @@
     package = pkgs.firefox-wayland;
   };
 
-  nixvim.homeManagerModules.nixvim = {
+  programs.neovim = {
     enable = true;
     defaultEditor = true;
   };
