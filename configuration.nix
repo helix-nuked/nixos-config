@@ -4,9 +4,6 @@
 
 { config, lib, pkgs, inputs, ... }:
 
-let
-  pkgs-unstable-hyprland = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -116,13 +113,11 @@ in
   hardware = {
     graphics = {
       enable = true;
-      package = pkgs-unstable-hyprland.mesa.drivers;
       extraPackages = with pkgs; [
         intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
         libvdpau-va-gl
       ];
       enable32Bit = true;
-      package32 = pkgs-unstable-hyprland.pkgsi686Linux.mesa.drivers;
     };
   };
 
