@@ -48,7 +48,6 @@
     kitty = {
       enable = true;
     };
-    btop.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -57,6 +56,7 @@
     neofetch
     nix-output-monitor
     gh
+    btop
   ];
 
   wayland.windowManager.hyprland = {
