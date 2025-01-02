@@ -28,18 +28,26 @@
     extensions = [
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
       { id = "jinjaccalgkegednnccohejagnlnfdag"; } # violentmonkey
-      { id = "aleakchihdccplidncghkekgioiakgal"; } # h254ify
     ];
   };
 
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox-wayland;
-  };
+  programs = {
+    firefox = {
+      enable = true;
+      package = pkgs.firefox-wayland;
+    };
 
-  programs.nixvim = {
-    enable = true;
-    defaultEditor = true;
+    nixvim = {
+      enable = true;
+      defaultEditor = true;
+      clipboard.providers = {
+        wl-copy.enable = true;
+      };
+    };
+
+    kitty = {
+      enable = true;
+    };
   };
 
   home.packages = with pkgs; [
@@ -49,6 +57,15 @@
     nix-output-monitor
     gh
   ];
+
+  wayland.windowManager.hyprland = {
+    # allow home-manager to configure hyprland
+    enable = true;
+
+    settings = {
+
+    };
+  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

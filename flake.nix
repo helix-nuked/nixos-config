@@ -39,9 +39,14 @@
         # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
         inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nixvim, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, nixvim, hyprland, ... }: {
     # Please replace my-nixos with your hostname
     nixosConfigurations.helinix = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
