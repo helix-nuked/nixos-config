@@ -108,6 +108,8 @@
     };
   };
 
+  services.flatpak.enable = true; # add flatpak for sober cuz excited to test
+
   # Hardware Accelerate with VA-API
   hardware = {
     graphics = {
