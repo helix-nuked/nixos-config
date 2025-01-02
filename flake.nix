@@ -44,6 +44,11 @@
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./configuration.nix
+        {
+            # given the users in this list the right to specify additional substituters via:
+            #    1. `nixConfig.substituters` in `flake.nix`
+            nix.settings.trusted-users = [ "helix" "root" ];
+        }
         home-manager.nixosModules.home-manager
         {
             home-manager.useGlobalPkgs = true;
@@ -52,11 +57,6 @@
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
-        }
-        {
-            # given the users in this list the right to specify additional substituters via:
-            #    1. `nixConfig.substituters` in `flake.nix`
-            nix.settings.trusted-users = [ "ryan" ];
         }
       ];
     };
