@@ -1,6 +1,12 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
+
+  home.packages = with pkgs; [
+    # Other packages...
+    nixvim  # Add nixvim to your user's environment
+  ];
+
   # TODO please change the username & home directory to your own
   home.username = "helix";
   home.homeDirectory = "/home/helix";
@@ -27,6 +33,7 @@
     extensions = [
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
       { id = "jinjaccalgkegednnccohejagnlnfdag"; } # violentmonkey
+      { id = "aleakchihdccplidncghkekgioiakgal"; } # h254ify
     ];
   };
 
@@ -35,7 +42,7 @@
     package = pkgs.firefox-wayland;
   };
 
-  programs.neovim = {
+  programs.nixvim = {
     enable = true;
     defaultEditor = true;
   };
