@@ -119,6 +119,10 @@
       ];
       enable32Bit = true;
     };
+    opengl = {
+      driSupport = true;
+      driSupport32Bit = true;
+    };
   };
 
   # Configure keymap in X11
