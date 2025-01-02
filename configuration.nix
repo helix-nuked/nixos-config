@@ -104,7 +104,6 @@
       xwayland.enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
-    btop.enable = true;
   };
 
   services.flatpak.enable = true; # add flatpak for sober cuz excited to test
