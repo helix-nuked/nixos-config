@@ -69,9 +69,9 @@
     homeConfigurations.helix = home-manager.lib.homeManagerConfiguration {
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      extra-modules = {
+      extra-modules = [
         nixvim.homeManagerModules.nixvim
-      };
+      ];
     };
   };
 }
