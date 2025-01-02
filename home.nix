@@ -2,11 +2,6 @@
 
 {
 
-  home.packages = with pkgs; [
-    # Other packages...
-    nixvim  # Add nixvim to your user's environment
-  ];
-
   # TODO please change the username & home directory to your own
   home.username = "helix";
   home.homeDirectory = "/home/helix";
