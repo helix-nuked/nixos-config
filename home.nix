@@ -41,7 +41,7 @@
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 1w";
-      clean.dates = "weeekly";
+      clean.dates = "weekly";
       flake = "/home/helix/nixos-config";
     };
 
