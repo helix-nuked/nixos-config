@@ -37,6 +37,13 @@
       package = pkgs.firefox-wayland;
     };
 
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 1w";
+      flake = "/home/helix/nixos-config";
+    };
+
     nixvim = {
       enable = true;
       defaultEditor = true;
@@ -57,7 +64,6 @@
     neofetch
     nix-output-monitor
     gh
-    nh
     nvd
   ];
 
