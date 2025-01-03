@@ -93,7 +93,7 @@
   services = {
     # Enable the X11 windowing system.
     xserver.enable = true;
-    xserver.videoDrivers = [ "intel" ]; # TODO Try modesetting vs intel on ivy bridge
+    xserver.videoDrivers = [ "modesetting" ]; # TODO Try modesetting vs intel on ivy bridge
     desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
   };
