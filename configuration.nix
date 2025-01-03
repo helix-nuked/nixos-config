@@ -76,11 +76,12 @@
   # };
 
   # Perform garbage collection weekly to maintain low disk usage
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 1w";
-  };
+  # nix.gc = {
+  #   automatic = true;
+  #   dates = "weekly";
+  #   options = "--delete-older-than 1w";
+  # };
+  # USING NH CLEAN
 
   # Optimize storage
   # You can also manually optimize the store via:
