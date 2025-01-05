@@ -28,6 +28,7 @@
     extensions = [
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
       { id = "jinjaccalgkegednnccohejagnlnfdag"; } # violentmonkey
+      { id = "ghmbeldphafepmbegfdlkpapadhbakde"; } # proton pass
     ];
   };
 
