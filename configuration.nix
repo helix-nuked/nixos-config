@@ -45,7 +45,7 @@
       "loglevel=3"
       "rd.systemd.show_status=false"
       "udev.log_priority=3"
-      "resume=UUID=\"a2497304-6055-4c9a-a5a2-afba9721eefe\""
+      "resume=UUID=\"ac72b0aa-19f9-4e07-94c2-009b9bf0ce60\""
     ];
   };
 
