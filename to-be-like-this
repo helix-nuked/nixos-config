@@ -1,0 +1,52 @@
+nixos-config/
+├── system
+│   ├── base
+│   │   ├── hostname.nix
+│   │   ├── locale.nix
+│   │   ├── users.nix
+│   │   ├── timezone.nix
+│   ├── network
+│   │   ├── network.nix
+│   ├── boot
+│   │   ├── boot.nix
+│   ├── security
+│   │   ├── openssh.nix
+│   │   ├── gnupg.nix
+│   ├── custom
+│   │   ├── custom.nix
+│   ├── nix
+│   │   ├── nixpkgs.nix  # Nixpkgs overrides and customizations
+│   │   ├── nix.nix  # Experimental features and NixOS-specific settings
+├── graphical
+│   ├── display
+│   │   ├── display.nix
+│   ├── compositor
+│   │   ├── hyprland.nix
+│   │   ├── plasma6.nix
+│   ├── display-manager
+│   │   ├── sddm.nix
+│   ├── plymouth
+│   │   ├── plymouth.nix
+│   ├── terminal
+│   │   ├── terminal.nix  # Terminal-related settings
+├── hardware
+│   ├── audio
+│   │   ├── audio.nix
+│   ├── input
+│   │   ├── input.nix
+│   ├── printers
+│   │   ├── cups.nix  # Moved to system-tweaks/misc/
+│   ├── hardware-extra
+│   │   ├── hardware-extra.nix
+│   ├── packages
+│   │   ├── packages.nix
+├── packages
+│   ├── software
+│   │   ├── software.nix
+├── system-tweaks
+│   ├── misc
+│   │   ├── firewall.nix  # Firewall configuration
+│   │   ├── cups.nix  # CUPS configuration
+│   │   ├── nixpkgs.nix  # Nixpkgs overrides or extra configurations
+│   ├── misc.nix  # Final tweaks and system-wide configurations
+├── default.nix  # Main entry point for NixOS configuration
