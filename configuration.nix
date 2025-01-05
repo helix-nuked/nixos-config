@@ -152,6 +152,8 @@
     # Use home-manager for packages
   };
 
+  services.thermald.enable = true;
+
   # programs.firefox.enable = true;
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
