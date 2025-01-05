@@ -42,7 +42,7 @@
       # clean.enable = true;
       # clean.extraArgs = "--keep-since 1w";
       # clean.dates = "weekly";
-      flake = "/home/helix/nixos-config";
+      flake = "/home/helix/nixos-config"; # temporary helix as user cuz i no code
     };
 
     nixvim = {
