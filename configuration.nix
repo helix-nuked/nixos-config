@@ -101,6 +101,8 @@
     xserver.videoDrivers = ["modesetting"]; # TODO Try modesetting vs intel on ivy bridge
     desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
+    displayManager.autoLogin.enable = true;
+    displayManager.autoLogin.user = "helix";
   };
   programs = {
     hyprland = {
