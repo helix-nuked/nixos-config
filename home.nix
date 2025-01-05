@@ -22,14 +22,7 @@
     };
   };
 
-  programs.chromium = {
-    enable = true;
-    extensions = [
-      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
-      { id = "jinjaccalgkegednnccohejagnlnfdag"; } # violentmonkey
-      { id = "ghmbeldphafepmbegfdlkpapadhbakde"; } # proton pass
-    ];
-  };
+  programs.
 
   programs = {
     firefox = {
@@ -53,10 +46,22 @@
       };
     };
 
+    vscode = {
+      enable = true;
+    };
+
     kitty = {
       enable = true;
     };
     btop.enable = true;
+    chromium = {
+      enable = true;
+      extensions = [
+        { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
+        { id = "jinjaccalgkegednnccohejagnlnfdag"; } # violentmonkey
+        { id = "ghmbeldphafepmbegfdlkpapadhbakde"; } # proton pass
+      ];
+    };
   };
 
   home.packages = with pkgs; [
