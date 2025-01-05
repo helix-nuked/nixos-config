@@ -46,6 +46,11 @@
 
     vscode = {
       enable = true;
+      extensions = with pkgs; [
+        vscode-extensions.eamodio.gitlens
+        vscode-extensions.jnoortheen.nix-ide
+
+      ];
     };
 
     kitty = {
@@ -70,7 +75,7 @@
     gh
     nvd
     alejandra
-    nixd
+    nil
   ];
 
   wayland.windowManager.hyprland = {
