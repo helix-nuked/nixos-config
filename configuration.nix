@@ -1,14 +1,17 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -32,7 +35,7 @@
       themePackages = with pkgs; [
         # By default we would install all themes
         (adi1090x-plymouth-themes.override {
-          selected_themes = [ "pixels" ];
+          selected_themes = ["pixels"];
         })
       ];
     };
@@ -50,16 +53,16 @@
   };
 
   nixpkgs.config.packageOverrides = pkgs: {
-    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override {enableHybridCodec = true;};
   };
 
   networking = {
     hostName = "acer"; # Define your hostname.
     # Pick only one of the below networking options.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    networkmanager.enable = true; # Easiest to use and most distros use this by default.
     defaultGateway = "192.168.1.1";
-    nameservers = [ "90.156.160.115" "45.90.28.17" "45.90.30.17" "1.1.1.1" "1.0.0.1" ];
+    nameservers = ["90.156.160.115" "45.90.28.17" "45.90.30.17" "1.1.1.1" "1.0.0.1"];
   };
 
   # Set your time zone.
@@ -95,7 +98,7 @@
   services = {
     # Enable the X11 windowing system.
     xserver.enable = true;
-    xserver.videoDrivers = [ "modesetting" ]; # TODO Try modesetting vs intel on ivy bridge
+    xserver.videoDrivers = ["modesetting"]; # TODO Try modesetting vs intel on ivy bridge
     desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
   };
@@ -148,7 +151,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.helix = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "audio" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "networkmanager" "video" "audio"]; # Enable ‘sudo’ for the user.
     # Use home-manager for packages
   };
 
@@ -157,7 +160,7 @@
   # programs.firefox.enable = true;
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -215,6 +218,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
-

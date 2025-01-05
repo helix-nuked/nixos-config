@@ -40,9 +40,9 @@
       url = "github:oxalica/nil";
     };
     nixvim = {
-        url = "github:nix-community/nixvim";
-        # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixvim";
+      # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
@@ -51,31 +51,37 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nixvim, hyprland, ... }: {
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    nixvim,
+    hyprland,
+    ...
+  }: {
     # Please replace my-nixos with your hostname
     nixosConfigurations.acer = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs; }; # this is the important part
+      specialArgs = {inherit inputs;}; # this is the important part
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./configuration.nix
         {
-            # given the users in this list the right to specify additional substituters via:
-            #    1. `nixConfig.substituters` in `flake.nix`
-            nix.settings.trusted-users = [ "helix" "root" ];
+          # given the users in this list the right to specify additional substituters via:
+          #    1. `nixConfig.substituters` in `flake.nix`
+          nix.settings.trusted-users = ["helix" "root"];
         }
         home-manager.nixosModules.home-manager
         {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.sharedModules = [
-              nixvim.homeManagerModules.nixvim
-            ];
-            home-manager.users.helix = import ./home.nix;
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.sharedModules = [
+            nixvim.homeManagerModules.nixvim
+          ];
+          home-manager.users.helix = import ./home.nix;
 
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
+          # Optionally, use home-manager.extraSpecialArgs to pass
+          # arguments to home.nix
         }
       ];
     };
