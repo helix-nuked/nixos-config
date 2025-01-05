@@ -69,6 +69,8 @@
     nix-output-monitor
     gh
     nvd
+    alejandra
+    nixd
   ];
 
   wayland.windowManager.hyprland = {
