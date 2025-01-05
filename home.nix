@@ -78,6 +78,7 @@
     nvd
     alejandra
     nixd
+    nil
   ];
 
   wayland.windowManager.hyprland = {
