@@ -82,26 +82,6 @@
     zsh-powerlevel10k
   ];
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      ll = "ls -l";
-    };
-
-    initExtra = ''
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme;
-    '';
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["git"];
-    };
-  };
-
   wayland.windowManager.hyprland = {
     # allow home-manager to configure hyprland
     enable = true;
