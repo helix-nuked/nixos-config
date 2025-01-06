@@ -158,6 +158,7 @@
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager" "video" "audio"]; # Enable ‘sudo’ for the user.
     # Use home-manager for packages
+    shell = pkgs.zsh;
   };
 
   services.thermald.enable = true;
