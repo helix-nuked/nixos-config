@@ -26,10 +26,10 @@
   };
 
   programs = {
-    firefox = {
-      enable = true;
-      package = pkgs.firefox-wayland;
-    };
+    # firefox = {
+    #   enable = true;
+    #   package = pkgs.firefox-wayland;
+    # };
 
     nh = {
       enable = true;
@@ -53,15 +53,8 @@
       history.ignoreAllDups = true;
       history.path = "$HOME/.zsh_history";
 
-      antidote = {
+      ohMyZsh = {
         enable = true;
-        plugins = [
-          ''
-            zsh-users/zsh-autosuggestions
-            ohmyzsh/ohmyzsh
-            romkatv/powerlevel10k
-          ''
-        ];
       };
     };
 
