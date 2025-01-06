@@ -79,7 +79,28 @@
     alejandra
     nixd
     nil
+    zsh-powerlevel10k
   ];
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ll = "ls -l";
+    };
+
+    initExtra = ''
+      source ${pkgs.zsh-powerlevel10k}/share/zsh/themes/spaceship.zsh-theme;
+    '';
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = ["git"];
+    };
+  };
 
   wayland.windowManager.hyprland = {
     # allow home-manager to configure hyprland
