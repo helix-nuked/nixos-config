@@ -82,10 +82,6 @@
     zsh-powerlevel10k
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-  ];
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;

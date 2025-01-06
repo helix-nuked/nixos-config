@@ -88,6 +88,10 @@
   };
   # NOT USING NH CLEAN
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
+
   # Optimize storage
   # You can also manually optimize the store via:
   #    nix-store --optimise
