@@ -80,6 +80,7 @@
     nixd
     nil
     zsh-powerlevel10k
+    vesktop # Discord
   ];
 
   wayland.windowManager.hyprland = {
