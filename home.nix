@@ -49,7 +49,10 @@
         ll = "ls -l";
       };
 
-      histSize = 10000;
+      history.size = 10000;
+      history.ignoreAllDups = true;
+      history.path = "$HOME/.zsh_history";
+
 
       ohMyZsh = {
         enable = true;
