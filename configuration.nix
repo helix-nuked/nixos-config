@@ -61,7 +61,6 @@
     # Pick only one of the below networking options.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     networkmanager.enable = true; # Easiest to use and most distros use this by default.
-    defaultGateway = "192.168.1.1";
     nameservers = ["90.156.160.115" "45.90.28.17" "45.90.30.17" "1.1.1.1" "1.0.0.1"];
   };
 
