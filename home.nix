@@ -53,11 +53,10 @@
       history.ignoreAllDups = true;
       history.path = "$HOME/.zsh_history";
 
-
-      ohMyZsh = {
+      oh-my-zsh = {
         enable = true;
-          plugins = [ "git" "aliases" ];
-          theme = "robbyrussell";
+        plugins = ["git" "aliases"];
+        theme = "robbyrussell";
       };
     };
 
