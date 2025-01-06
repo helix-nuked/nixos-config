@@ -158,8 +158,9 @@
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager" "video" "audio"]; # Enable ‘sudo’ for the user.
     # Use home-manager for packages
+    shell = pkgs.zsh;
   };
-
+pkgs.bashInteractive
   services.thermald.enable = true;
 
   # programs.firefox.enable = true;
@@ -178,6 +179,7 @@
       vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       wget
       helix
+      zsh
     ];
   };
 
