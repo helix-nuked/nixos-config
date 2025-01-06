@@ -160,6 +160,7 @@
     # Use home-manager for packages
     shell = pkgs.zsh;
   };
+  
   services.thermald.enable = true;
 
   # programs.firefox.enable = true;
