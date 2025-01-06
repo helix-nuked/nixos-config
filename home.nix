@@ -49,12 +49,12 @@
         ll = "ls -l";
       };
 
-      history.size = 10000;
-      history.ignoreAllDups = true;
-      history.path = "$HOME/.zsh_history";
+      histSize = 10000;
 
       ohMyZsh = {
         enable = true;
+          plugins = [ "git" "aliases" ];
+          theme = "robbyrussell";
       };
     };
 
