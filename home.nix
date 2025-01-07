@@ -123,7 +123,7 @@
     enable = true;
     git = true;
     enableZshIntegration = true;
-    icons = true;
+    icons = "auto";
   };
 
   programs.starship = {
