@@ -140,7 +140,7 @@
 
   programs.zoxide = {
     enable = true;
-    programs.zoxide.enableZshIntegration = true;
+    enableZshIntegration = true;
   };
 
   programs.starship = {
