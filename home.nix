@@ -59,10 +59,10 @@
         ll = "eza -l";
         la = "eza -a";
         ls = "eza";
-        tree = "erdtree";
+        tree = "erd";
         cd = "z";
         cat = "bat";
-        
+        du = "dust";
       };
 
       history.size = 10000;
