@@ -112,7 +112,19 @@
     nil
     vesktop # Discord
     tldr
+    erdtree
+    dust
+    lolcat
   ];
+
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.bat = {
+    enable = true;
+  };
 
   programs.fzf = {
     enable = true;
@@ -124,6 +136,11 @@
     git = true;
     enableZshIntegration = true;
     icons = "auto";
+  };
+
+  programs.zoxide = {
+    enable = true;
+    programs.zoxide.enableZshIntegration = true;
   };
 
   programs.starship = {
