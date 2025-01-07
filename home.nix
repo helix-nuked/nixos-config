@@ -56,7 +56,13 @@
         [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
       '';
       shellAliases = {
-        ll = "ls -l";
+        ll = "eza -l";
+        la = "eza -a";
+        ls = "eza";
+        tree = "erdtree";
+        cd = "z";
+        cat = "bat";
+        
       };
 
       history.size = 10000;
