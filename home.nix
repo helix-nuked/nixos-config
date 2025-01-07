@@ -63,6 +63,8 @@
         cd = "z";
         cat = "bat";
         du = "dust";
+        history = "atuin";
+        nxu = "nh os switch ~/nixos-config --ask -- --accept-flake-config";
       };
 
       history.size = 10000;
