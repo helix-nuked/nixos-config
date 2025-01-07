@@ -111,7 +111,20 @@
     nixd
     nil
     vesktop # Discord
+    tldr
   ];
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.eza = {
+    enable = true;
+    git = true;
+    enableZshIntegration = true;
+    icons = true;
+  };
 
   programs.starship = {
     enable = true;
